@@ -1,10 +1,10 @@
 ENV['RACK_ENV'] ||= 'test'
-require_relative "../config/environment"
-require "sinatra/activerecord/rake"
+require_relative '../config/environment'
+require 'sinatra/activerecord/rake'
 
 RSpec.configure do |config|
   config.before(:suite) do
-    Rake::Task["db:migrate"].execute
+    Rake::Task['db:migrate'].execute
     DatabaseCleaner.clean_with(:truncation)
   end
 
