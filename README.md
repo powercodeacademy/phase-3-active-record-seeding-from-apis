@@ -52,8 +52,8 @@ lesson. Then run these commands to set up the dependencies and set up the
 database:
 
 ```console
-$ bundle install
-$ bundle exec rake db:migrate
+bundle install
+bin/rake db:migrate
 ```
 
 ## Working with JSON APIs
@@ -106,7 +106,7 @@ So in order to seed our database from this API, we'll need to use Ruby to:
 To make the request to the API in Ruby, we'll use the
 [Rest Client][rest-client] gem. This library simplifies the process of making
 network requests in Ruby. We've already got this gem in our Gemfile, so let's
-experiment with it in our `rake console`:
+experiment with it in our bin/rake console`:
 
 ```rb
 response = RestClient.get "https://www.dnd5eapi.co/api/spells/acid-arrow"
@@ -188,10 +188,10 @@ data out of the response, try using `binding.pry` and experiment in the console.
 Now that we've got the new code in the `seeds.rb` file, we can run it:
 
 ```console
-$ bundle exec rake db:seed
+bin/rake db:seed
 ```
 
-And enter `rake console` to explore the new data:
+And enter bin/rake console` to explore the new data:
 
 ```rb
 Spell.last
@@ -204,7 +204,7 @@ Spell.last
 ```
 
 Success! We've taken the data from the API and used it to populate our database.
-Run `learn test` now to pass the test and complete this lesson.
+Run `bin/rspec` now to pass the test and complete this lesson.
 
 ## Resources
 
